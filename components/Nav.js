@@ -4,6 +4,10 @@ import { useRouter } from "next/router";
 function Nav() {
   const router = useRouter();
 
+  console.log("router", router);
+
+  console.log("router.current", router.current);
+
   return (
     <nav className="relative">
       <div className="absolute top-0 left-0 bg-gradient-to-r from-[#06202a] h-10 w-1/12 z-10" />
@@ -12,8 +16,10 @@ function Nav() {
           <h2
             key={key}
             onClick={() => router.push(`/?genre=${key}`)}
-            className="cursor-pointer transition duration-100 transform hover:scale-125
-          hover:text-white active:text-red-500"
+            className={`cursor-pointer transition duration-100 transform hover:scale-125
+          hover:text-white active:text-red-500 ${
+            key === router.query.genre && "scale-125 text-white"
+          }`}
           >
             {title}
           </h2>
