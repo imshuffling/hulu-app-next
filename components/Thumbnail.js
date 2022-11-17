@@ -41,6 +41,7 @@ const Thumbnail = forwardRef(({ result }, ref) => {
         blurDataURL={`data:image/svg+xml;base64,${toBase64(
           shimmer(1000, 1920)
         )}`}
+        className="aspect-video"
         height={1000}
         width={1920}
       />
